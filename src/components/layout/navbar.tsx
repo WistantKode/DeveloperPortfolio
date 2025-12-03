@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Github, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { NAVIGATION_ITEMS } from "@/lib/constants";
+import { NAVIGATION_ITEMS, PERSONAL_INFO } from "@/lib/constants";
 
 const navItems = NAVIGATION_ITEMS;
 
@@ -70,10 +70,10 @@ export default function Navbar() {
               onClick={() => scrollToSection("#hero")}
             >
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
-                S9
+                YN
               </div>
               <span className="text-white font-bold text-xl hidden sm:block">
-                Starland9
+                Your Name
               </span>
             </motion.div>
 
@@ -109,7 +109,7 @@ export default function Navbar() {
               {/* Social Links (Desktop) */}
               <div className="hidden lg:flex items-center gap-3">
                 <motion.a
-                  href="https://github.com/Starland9"
+                  href={PERSONAL_INFO.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
@@ -169,9 +169,9 @@ export default function Navbar() {
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
-                      S9
+                      YN
                     </div>
-                    <span className="text-white font-bold">Starland9</span>
+                    <span className="text-white font-bold">Your Name</span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
@@ -208,7 +208,7 @@ export default function Navbar() {
                 <div className="p-6 border-t border-white/10">
                   <div className="flex gap-3">
                     <motion.a
-                      href="https://github.com/Starland9"
+                      href={PERSONAL_INFO.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileTap={{ scale: 0.9 }}

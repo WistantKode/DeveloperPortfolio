@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Starland9 Portfolio",
+  name: "Your Name Portfolio",
   description:
-    "Portfolio de Starland9, développeur Full-Stack passionné par les technologies modernes et les interfaces utilisateur révolutionnaires.",
-  url: "https://starland9.dev",
-  ogImage: "https://starland9.dev/og-image.jpg",
+    "Portfolio of a passionate Full-Stack developer in modern technologies and revolutionary user interfaces.",
+  url: "https://your-domain.com",
+  ogImage: "https://your-domain.com/og-image.jpg",
   links: {
-    github: "https://github.com/Starland9",
-    linkedin: "https://linkedin.com/in/starland9",
-    twitter: "https://twitter.com/starland9",
+    github: "https://github.com/YourUsername",
+    linkedin: "https://linkedin.com/in/YourUsername",
+    twitter: "https://twitter.com/YourUsername",
   },
 };
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "développeur",
+    "developer",
     "full-stack",
     "react",
     "nextjs",
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Starland9",
+      name: "Your Name",
       url: siteConfig.url,
     },
   ],
-  creator: "Starland9",
+  creator: "Your Name",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
-    locale: "fr_FR",
-    url: siteConfig.url,
+    locale: "en_US",
+    url: site.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@starland9",
+    creator: "@YourUsername",
   },
   icons: {
     icon: "/favicon.ico",

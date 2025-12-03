@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import type { GitHubUser } from "@/types/github";
 
 export async function GET() {
+  const githubUsername = process.env.GITHUB_USERNAME || "YourUsername";
   try {
-    const response = await fetch("https://api.github.com/users/Starland9", {
+    const response = await fetch(`https://api.github.com/users/${githubUsername}`, {
       headers: {
         Accept: "application/vnd.github.v3+json",
       },

@@ -1,8 +1,8 @@
 "use client";
 
-import { SOCIAL_LINKS } from "@/lib/constants";
+import { SOCIAL_LINKS, PERSONAL_INFO } from "@/lib/constants";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from "lucide-react";
+import { ArrowUp, Heart } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -31,13 +31,13 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold">
-                S9
+                YN
               </div>
-              <span className="text-white font-bold text-xl">Starland9</span>
+              <span className="text-white font-bold text-xl">Your Name</span>
             </div>
             <p className="text-white/70 max-w-sm">
-              Développeur Full-Stack passionné, créant des expériences web
-              exceptionnelles avec les technologies modernes.
+              Passionate Full-Stack Developer, creating exceptional web
+              experiences with modern technologies.
             </p>
           </motion.div>
 
@@ -51,17 +51,17 @@ export default function Footer() {
           >
             <h3 className="text-white font-semibold">Navigation</h3>
             <nav className="space-y-2">
-              {["Accueil", "À Propos", "Projets", "Contact"].map(
+              {["Home", "About", "Projects", "Contact"].map(
                 (item, index) => (
                   <motion.button
                     key={item}
                     onClick={() => {
                       const section =
-                        item === "Accueil"
+                        item === "Home"
                           ? "hero"
-                          : item === "À Propos"
+                          : item === "About"
                             ? "about"
-                            : item === "Projets"
+                            : item === "Projects"
                               ? "projects"
                               : "contact";
                       document
@@ -89,10 +89,10 @@ export default function Footer() {
             <h3 className="text-white font-semibold">Contact</h3>
             <div className="space-y-2">
               <a
-                href="mailto:contact@starland9.dev"
+                href={`mailto:${PERSONAL_INFO.email}`}
                 className="block text-white/70 hover:text-cyan-400 transition-colors"
               >
-                contact@starland9.dev
+                {PERSONAL_INFO.email}
               </a>
               <div className="flex gap-3 pt-2">
                 {SOCIAL_LINKS.map((social, index) => (
@@ -128,9 +128,9 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div className="flex items-center gap-2 text-white/60 text-sm">
-            <span>© {currentYear} Starland9. Fait avec</span>
+            <span>© {currentYear} Your Name. Made with</span>
             <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-            <span>et beaucoup de café ☕</span>
+            <span>and lots of coffee ☕</span>
           </div>
 
           {/* Back to Top */}

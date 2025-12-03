@@ -9,6 +9,7 @@ import { GitHubRepo } from "@/types/github";
 import { formatDate } from "@/lib/utils";
 import { FEATURED_PROJECTS } from "@/lib/constants";
 import Image from "next/image";
+import { siteConfig } from "@/lib/metadata";
 
 export default function ProjectsSection() {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
@@ -76,10 +77,10 @@ export default function ProjectsSection() {
           className="text-center mb-10 sm:mb-14"
         >
           <h2 className="text-responsive-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent mb-4">
-            Projets
+            Projects
           </h2>
           <p className="text-responsive-lg text-white/70 max-w-2xl mx-auto px-4">
-            Découvrez mes créations les plus récentes et innovantes
+            Discover my most recent and innovative creations
           </p>
         </motion.div>
 
@@ -91,7 +92,7 @@ export default function ProjectsSection() {
           className="flex justify-center mb-12"
         >
           <GlassButton href="/projects" size="lg">
-            Explorer tous mes projets vedettes
+            Explore all my featured projects
           </GlassButton>
         </motion.div>
 
@@ -113,7 +114,7 @@ export default function ProjectsSection() {
                   : "bg-white/10 border-white/20 text-white/70 hover:bg-white/20"
               }`}
             >
-              {tech === "all" ? "Tous" : tech}
+              {tech === "all" ? "All" : tech}
             </button>
           ))}
         </motion.div>
@@ -141,7 +142,7 @@ export default function ProjectsSection() {
                 <div className="space-y-5">
                   <div className="space-y-2">
                     <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.3em] text-white/60">
-                      Projet vedette
+                      Featured Project
                     </span>
                     <h3 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
                       {flagshipProject.title}
@@ -152,14 +153,14 @@ export default function ProjectsSection() {
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <GlassButton href={`/projects/${flagshipProject.id}`}>
-                      Étude de cas détaillée
+                      Detailed case study
                     </GlassButton>
                     {flagshipProject.liveUrl && (
                       <GlassButton
                         href={flagshipProject.liveUrl}
                         variant="secondary"
                       >
-                        Découvrir en ligne
+                        Discover online
                       </GlassButton>
                     )}
                     {flagshipProject.githubUrl && (
@@ -167,7 +168,7 @@ export default function ProjectsSection() {
                         href={flagshipProject.githubUrl}
                         variant="outline"
                       >
-                        Voir le code
+                        See the code
                       </GlassButton>
                     )}
                   </div>
@@ -247,7 +248,7 @@ export default function ProjectsSection() {
 
                     {/* Description */}
                     <p className="text-white/70 text-sm line-clamp-3 min-h-[60px]">
-                      {repo.description || "Aucune description disponible"}
+                      {repo.description || "No description available"}
                     </p>
 
                     {/* Stats */}
@@ -311,11 +312,11 @@ export default function ProjectsSection() {
             variant="outline"
             size="lg"
             onClick={() =>
-              window.open("https://github.com/Starland9", "_blank")
+              window.open(siteConfig.links.github, "_blank")
             }
           >
             <Github className="w-5 h-5" />
-            Voir tous mes projets sur GitHub
+            See all my projects on GitHub
           </GlassButton>
         </motion.div>
       </div>
